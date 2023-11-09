@@ -1,0 +1,88 @@
+{% extends 'publier/base.html.twig' %}
+{% block title %} Annonce{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1 class="my-4">{% trans %}Mes Annonces Immobilières{% endtrans %}</h1>
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
+        <div class="row">
+            {% if annonces is not empty %}
+                {% for annonce in annonces %}
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            {% if annonce.images|length > 0 %}
+                            <img src="{{ asset('uploads/images/'~ annonce.images[0]) }}" alt="" class="img-a" style="max-width: 100%;max-height: 24vh; width: auto;
+    height: auto;" >
+                            {% else %}
+                            <img src="{{ asset('assets/img/no image .png') }}" alt="Empty Image" class="img-a" style="max-width: 100%;max-height: 24vh; width: auto;
+    height: auto;">
+                            {% endif %}
+                            <div class="card-body"style=" height: 250px">
+                                <h5 class="card-title">{{ annonce.title }}</h5>
+                                <p class="card-text">{{ annonce.description|slice(0, 100) }}{% if annonce.description|length > 100 %}...{% endif %}</p>
+                                <p class="card-text">Prix : {{ annonce.price }} €</p>
+                                <a href="{{ path('modifier_annonce', {'id': annonce.id}) }}" class="btn btn-warning">
+                                    <i class="bi bi-pencil"></i>
+                                </a>
+                                <a href="{{ path('supprimer_annonce', {'id': annonce.id}) }}" class="btn btn-danger">
+                                    <i class="bi bi-trash"></i> 
+                                </a>
+                                {% if annonce.description|length > 100 %}
+                                    <button type="button" class="btn btn-primary w-auto h-auto" data-bs-toggle="modal" data-bs-target="#annonceModal{{ annonce.id }}">
+                                        <i class="bi bi-eye"></i>
+                                    </button>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+
+                    {# modal #}
+                    {% if annonce.description|length > 100 %}
+                        <div class="modal fade" id="annonceModal{{ annonce.id }}" tabindex="-1" role="dialog" aria-labelledby="annonceModal{{ annonce.id }}Label" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="annonceModal{{ annonce.id }}Label">{{ annonce.title }}</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div id="carouselExample{{ annonce.id }}" class="carousel slide" data-bs-ride="carousel">
+                                            <div class="carousel-inner">
+                                                {% for key, image in annonce.images %}
+                                                    <div class="carousel-item {% if key == 0 %}active{% endif %}">
+                                                        <img src="{{ asset('uploads/images/'~ image) }}" alt="Image {{ key }}" class="d-block w-100">
+                                                    </div>
+                                                {% endfor %}
+                                            </div>
+                                            <a class="carousel-control-prev" href="#carouselExample{{ annonce.id }}" role="button" data-bs-slide="prev">
+                                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                <span class="visually-hidden">{% trans %}Precedant{% endtrans %}</span>
+                                            </a>
+                                            <a class="carousel-control-next" href="#carouselExample{{ annonce.id }}" role="button" data-bs-slide="next">
+                                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                <span class="visually-hidden">{% trans %}Suivant{% endtrans %}</span>
+                                            </a>
+                                        </div>
+                                        <p>{{ annonce.description }}</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{% trans %}Fermer{% endtrans %}</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            {% else %}
+                <div class="col-md-12">
+                    <p>{% trans %}Vous n'avez pas encore publié d'annonces immobilières.{% endtrans %}</p>
+                    <a href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'fr'})) }}" class="btn btn-success">{% trans %}Publier une nouvelle annonce{% endtrans %}</a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

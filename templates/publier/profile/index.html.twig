@@ -1,0 +1,59 @@
+{% extends 'publier/base.html.twig' %}
+    {% block title %} Profile{% endblock %}
+
+    {% block body %}
+        <div class="container bootstrap snippets bootdey">
+<div class="row">
+  <div class="profile-nav col-md-3">
+      <div class="panel">
+          <div class="user-heading round">
+            {% if user.photo is not null %}
+                <a href="{{ path('app_edite') }}">
+                    <img src="{{ asset('/uploads/photos/' ~ user.photo) }}">
+                </a>
+            {% else %}
+                <a href="{{ path('app_edite') }}">
+                    <img src="{{ asset('assets/img/no image .png') }}" alt="Empty Image">
+                </a>
+            {% endif %}
+
+              <h1>{{user.name}} {{user.firstname}}</h1>
+              <p>{{user.email}}</p>
+          </div>
+
+          <ul class="nav nav-pills nav-stacked">
+              <li><a href="{{path('app_edite')}}"> <i class="fa fa-edit"></i> {% trans %}Modifier mon profile{% endtrans %}</a></li>
+          </ul>
+      </div>
+  </div>
+  <div class="profile-info col-md-9">
+      <div class="panel">
+          <div class="panel-body bio-graph-info">
+              <h1>{% trans %}Mon profile{% endtrans %}</h1>
+              <div class="row">
+                  <div class="col-md-6">
+                      <p><span>{% trans %}Prenom {% endtrans %}</span>: {{user.firstname}}</p>
+                  </div>
+                  <div class="col-md-6">
+                      <p><span>{% trans %}Nom {% endtrans %}</span>: {{user.name}}</p>
+                  </div>
+              </div>
+              <div class="row">
+                    <div class="col-md-6">
+                        <p><span>Email </span>: {{user.email}}</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p><span>{% trans %}Telephone {% endtrans %}</span>: {{user.phone}}</p>
+                    </div>
+              </div>
+              <div class="row">
+                    <div class="col-md-6">
+                      <p><span>Skype </span>: {{user.skype}}</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+</div>
+    {% endblock %}

@@ -1,0 +1,27 @@
+easy_admin:
+    design:
+        form_theme: 'path_to_your_custom_form_theme.html.twig'
+    entities:
+        Image:
+            class: App\Entity\Image
+            form:
+                fields:
+                    - { property: 'images', type: 'file', type_options: { required: false } }
+                    # Autres champs d'Image
+
+   
+        Property:
+            class: App\Entity\Property
+            form:
+                fields:
+                    - 'title'
+                    - 'description'
+                    - 'adress'
+                    - 'type'
+                    - 'status'
+                    - 'surface'
+                    - 'chambre'
+                    - 'bain'
+                    - 'garage'
+                    - { property: 'price', type: 'money', currency: 'EUR' }
+                    - { property: 'images', type: 'collection', type_options: { entry_type: 'App\Form\ImageType', entry_options: { 'allow_add': true, 'allow_delete': true } } }

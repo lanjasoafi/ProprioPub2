@@ -1,0 +1,11 @@
+{# templates/publier/stripe_payment.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <h1>Finalisez votre paiement</h1>
+        <p>Appuyez sur le bouton ci-dessous pour procéder au paiement :</p>
+        <a href="{{ stripePaymentLink }}" class="btn btn-primary">Payer avec Stripe</a>
+    </div>
+{% endblock %}

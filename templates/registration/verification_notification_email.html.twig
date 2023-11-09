@@ -1,0 +1,13 @@
+{# templates/verification_notification_email.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+    <div>
+        <h1>Votre compte a été vérifié</h1>
+        <p>Votre compte a été vérifié par un administrateur.</p>
+        <p>Vous pouvez maintenant vous connecter à votre compte en utilisant le lien ci-dessous :</p>
+        <a href="{{ path('app_login') }}">Se connecter</a>
+    </div>
+{% endblock %}

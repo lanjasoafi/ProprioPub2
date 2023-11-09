@@ -1,0 +1,41 @@
+controllers:
+    resource: ../src/Controller/
+    type: attribute
+# config/routes.yaml
+paypal_payment:
+    path: '/paypal/payment/{token}'
+    controller: 'App\Controller\PayementController::paypalPayment'
+    methods: ['GET', 'POST']
+
+paypal_payment_success:
+    path: '/paypal/payment/success'
+    controller: 'App\Controller\PayementController::paypalPaymentSuccess'
+    methods: ['GET']
+
+paypal_payment_cancel:
+    path: '/paypal/payment/cancel'
+    controller: 'App\Controller\PayementController::paypalPaymentCancel'
+    methods: ['GET']
+
+credit_card_payment:
+    path: '/credit-card/payment/{token}'
+    controller: 'App\Controller\PayementController::creditCardPayment'
+    methods: ['POST']
+
+
+
+payment:
+    path: /payment/{token}
+    controller: 'App\Controller\PayementController::payment'
+    methods: ['GET']
+    requirements:
+        token: '[A-Za-z0-9]+' # Accepte uniquement des caractères alphanumériques pour le token
+
+payment_failed:
+    path: /payment/failed
+    controller: 'App\Controller\YourController::paymentFailed'
+    
+payment_confirmation:
+    path: /payment-confirmation
+    controller: App\Controller\PayementController::paymentConfirmation
+    methods: ['GET']

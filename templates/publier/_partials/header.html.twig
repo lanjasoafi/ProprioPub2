@@ -1,0 +1,50 @@
+<header class="navbar navbar-dark sticky-top bg-success bg-gradient flex-md-nowrap p-0 shadow">
+  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">ProprioPub</a>
+  <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+  
+
+ 
+    <ul class="nav d-lg-flex flex-row w-50 ">
+      <li class="nav-item dropdown">
+        <a class="nav-link linke px-3 dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
+          <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
+                {% trans %}Mon profile{% endtrans %}
+        </a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="{{ path('app_profile', {'_locale': app.request.locale}) }}">{% trans %}Voire mon profile{% endtrans %}</a></li>
+          <li><a class="dropdown-item" href="{{ path('app_edite', {'_locale': app.request.locale}) }}">{% trans %}Modifier mon profile{% endtrans %}</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link linke px-3" href="{{path('app_logout')}}">
+        <i class="bi bi-box-arrow-right me-2"width="16" height="16" style="color: #ffffff;font-size: 16px;"></i>
+                {% trans %}Deconnecter{% endtrans %}
+        </a>
+      </li>
+      {% if app.request.locale == 'en' %}
+              <li class="nav-item">
+                  <a class="nav-link" href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'fr'})) }}">
+                      {% trans %}Fr{% endtrans %}
+                      <img class="drp" src="{{asset('assets/img/fr.jpg')}}" alt="">
+                  </a>
+              </li>
+          {% endif %}
+          
+          {% if app.request.locale == 'fr' %}
+              <li class="nav-item">
+                  <a class="nav-link linke" href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'en'})) }}">
+                      {% trans %}En{% endtrans %}
+                      <img class="drp" src="{{asset('assets/img/en.jpg')}}" alt="">
+                  </a>
+              </li>
+          {% endif %}
+    </ul>
+    
+  
+  <ul class="navbar-nav ms-auto">
+          
+      </ul>
+</header>

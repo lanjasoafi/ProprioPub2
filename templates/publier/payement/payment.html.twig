@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Payment Page</title>
+</head>
+<body>
+    <h1>Payment Page</h1>
+    {% if paypal_payment_link %}
+        <p>Click the button below to proceed with your PayPal payment:</p>
+        <a href="{{ paypal_payment_link }}" class="btn btn-primary">Pay with PayPal</a>
+    {% else %}
+        <p>There was an error creating the PayPal payment. Please try again later.</p>
+    {% endif %}
+</body>
+</html>

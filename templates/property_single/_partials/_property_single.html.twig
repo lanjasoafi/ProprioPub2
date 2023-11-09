@@ -1,0 +1,180 @@
+        <section class="property-single nav-arrow-b">
+          <div class="container">
+
+            <div class="row justify-content-center">
+              <div class="col-lg-12">
+                <div id="property-single-carousel" class="swiper">
+                  <div class="swiper-wrapper">
+                    {% for image in images %}
+                      <div class="carousel-item-b swiper-slide" style="height:700px">
+                        <div  style="background-image: url('{{ asset('uploads/images/'~ image.image) }}'); background-size: cover;background-repeat: no-repeat;height:100%; background-position: center;">
+                        </div>
+                    </div>
+                    {% endfor %}
+                     {# <div class="carousel-item-b swiper-slide">
+                        <img class="w-100" src="{{ asset('upload/images/'~ property.images[1].image) }}" alt="">
+                    </div> #}
+                    {# <div class="carousel-item-b swiper-slide">
+                        <img src="{{asset('assets/img/property-2.jpg')}}" alt="">
+                    </div>  #}
+                  </div>
+                </div>
+                <div class="property-single-carousel-pagination carousel-pagination"></div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-12">
+
+                <div class="row justify-content-between">
+                  <div class="col-md-5 col-lg-4">
+                    <div class="property-price d-flex justify-content-center foo">
+                      <div class="card-header-c d-flex">
+                        <div class="card-box-ico">
+                          <span class="bi bi-cash">$</span>
+                        </div>
+                        <div class="card-title-c align-self-center">
+                          <h5 class="title-c">{{property.price}}</h5>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="property-summary">
+                      <div class="row">
+                        <div class="col-sm-12">
+                          <div class="title-box-d section-t4">
+                            <h3 class="title-d">{% trans %}Résumé rapide{% endtrans %}</h3>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="summary-list">
+                        <ul class="list">
+                          <li class="d-flex justify-content-between">
+                            <strong>{% trans %}ID de propriété : {% endtrans %}</strong>
+                            <span class="text-dark">{{property.id}}</span>
+                          </li>
+                          <li class="d-flex justify-content-between">
+                            <strong>{% trans %}Adresse:{% endtrans %}</strong>
+                            <span class="text-dark">{{property.adress}}</span>
+                          </li>
+                          <li class="d-flex justify-content-between">
+                            <strong>{% trans %}Type d'immobilier:{% endtrans %}</strong>
+                            <span class="text-dark">{{property.type}}</span>
+                          </li>
+                          <li class="d-flex justify-content-between">
+                            <strong>{% trans %}Status:{% endtrans %}</strong>
+                            <span class="text-dark">{{property.status}}</span>
+                          </li>
+                          <li class="d-flex justify-content-between">
+                            <strong>{% trans %}Superficie:{% endtrans %}</strong>
+                            <span class="text-dark">{{property.surface}}m
+                              <sup>2</sup>
+                            </span>
+                          </li>
+                          <li class="d-flex justify-content-between">
+                            <strong>{% trans %}Nombre de chambre:{% endtrans %}</strong>
+                            <span class="text-dark">{{property.chambre}}</span>
+                          </li>
+                          <li class="d-flex justify-content-between">
+                            <strong>{% trans %}Nombre de salle de bain:{% endtrans %}</strong>
+                            <span class="text-dark">{{property.bain}}</span>
+                          </li>
+                          <li class="d-flex justify-content-between">
+                            <strong>{% trans %}Garage:{% endtrans %}</strong>
+                            <span class="text-dark">{{property.garage}}</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-7 col-lg-7 section-md-t3">
+                    <div class="row">
+                      <div class="col-sm-12">
+                        <div class="title-box-d mt-5 pt-5">
+                          <h3 class="title-d">{% trans %}Description de la propriété{% endtrans %}</h3>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="property-description">
+                      <p class="description color-text-a text-dark">
+                      {{property.description}}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="row section-t3">
+                  <div class="col-sm-12">
+                    <div class="title-box-d">
+                      <h3 class="title-d">{% trans %}Contacter l'agent{% endtrans %}</h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="row justify-content-between">
+                  <div class="col-md-5 col-lg-4">
+                  {% if user.photo is not empty%}
+                    <img src="{{asset('uploads/photos/' ~ user.photo)}}" alt="" class="img-fluid">
+                  {% else %}
+                    <img src="{{ asset('assets/img/no image .png') }}" alt="Empty Image" class="img-a" style="height: 500px;">
+                  {% endif %}
+                    
+                  </div>
+                  <div class="col-md-7 col-lg-7">
+                      <div class="row">
+                        <div class="col-sm-12">
+                          
+                            <div class="property-agent">
+                              <h4 class="title-agent">{{user.name}} {{user.firstname}}</h4>
+                              <p class="color-text-a text-dark">
+                                Nulla porttitor accumsan tincidunt. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet
+                                dui. Quisque velit nisi,
+                                pretium ut lacinia in, elementum id enim.
+                              </p>
+                              <ul class="list-unstyled">
+                                <li class="d-flex justify-content-between">
+                                  <strong>Phone:</strong>
+                                  <span class="color-text-a text-dark">{{user.phone}}</span>
+                                </li>
+                                <li class="d-flex justify-content-between">
+                                  <strong>Email:</strong>
+                                  <span class="color-text-a text-dark">{{user.email}}</span>
+                                </li>
+                                <li class="d-flex justify-content-between">
+                                  <strong>Skype:</strong>
+                                  <span class="color-text-a text-dark">{{user.skype}}</span>
+                                </li>
+                              </ul>
+                              <div class="socials-a">
+                                <ul class="list-inline">
+                                  <li class="list-inline-item">
+                                    <a href="#">
+                                      <i class="bi bi-facebook" aria-hidden="true"></i>
+                                    </a>
+                                  </li>
+                                  <li class="list-inline-item">
+                                    <a href="#">
+                                      <i class="bi bi-twitter" aria-hidden="true"></i>
+                                    </a>
+                                  </li>
+                                  <li class="list-inline-item">
+                                    <a href="#">
+                                      <i class="bi bi-instagram" aria-hidden="true"></i>
+                                    </a>
+                                  </li>
+                                  <li class="list-inline-item">
+                                    <a href="#">
+                                      <i class="bi bi-linkedin" aria-hidden="true"></i>
+                                    </a>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          
+                        </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>

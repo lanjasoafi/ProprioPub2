@@ -1,0 +1,78 @@
+{% extends 'publier/base.html.twig' %}
+{% block title %} Publier{% endblock %}
+
+{% form_theme form 'bootstrap_5_layout.html.twig' %}
+
+    {% block body %}
+                <div class="container" >
+                {# <h1 class="text-center">Publier une Annonce</h1> #}
+                    <div class="row">
+                    
+                        <div class="col-md-12">
+                            {{ form_start(form, { 'attr': {'enctype': 'multipart/form-data'} }) }}
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    {{ form_row(form.title) }}
+                                </div>
+                                <div class="col-md-6">
+                                    {{ form_row(form.description) }}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    {{ form_row(form.type) }}
+                                </div>
+                                <div class="col-md-6">
+                                    {{ form_row(form.status) }}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    {{ form_row(form.adress) }}
+                                </div>
+                                <div class="col-md-6">
+                                    {{ form_row(form.surface) }}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    {{ form_row(form.chambre) }}
+                                </div>
+                                <div class="col-md-6">
+                                    {{ form_row(form.bain) }}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    {{ form_row(form.garage) }}
+                                </div>
+                                <div class="col-md-6">
+                                    {{ form_row(form.price) }}
+                                </div>
+                            </div>
+                            <div class="row align-items-center mb-5">
+                                <div class="col-md-6">
+                                    {{ form_row(form.images) }}
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mt-3">
+                                    {# {{ form_row(form.submit)}} #}
+                                        <button type="submit" id="property_save" name="save" class="btn-success btn w-100 btn-sm">
+                                        Publier
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            {# {{ form_row(form.images) }} #}
+                            {# Ajoutez ici les autres champs du formulaire #}
+                            
+                            {{ form_end(form) }}
+                        </div>
+                    
+                    </div>
+                </div>
+                
+
+    {% endblock %}

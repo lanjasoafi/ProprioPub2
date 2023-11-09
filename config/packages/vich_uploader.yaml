@@ -1,0 +1,8 @@
+vich_uploader:
+    db_driver: orm
+    storage: file_system
+    mappings:
+        property:
+            uri_prefix: /upload/images
+            upload_destination: '%kernel.project_dir%/public/upload/images'
+            namer: Vich\UploaderBundle\Naming\OrignameNamer

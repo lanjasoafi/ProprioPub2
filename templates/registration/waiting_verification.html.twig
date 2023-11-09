@@ -1,0 +1,30 @@
+{# templates/registration/waiting_verification.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Attente de vérification{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="text-center">
+                    <h1 class="display-4">Attente de vérification</h1>
+                    <p class="lead text-muted">Votre compte doit être vérifié avant de pouvoir vous connecter.</p>
+                </div>
+                <div class="card shadow-lg">
+                    <div class="card-body">
+                        <p>Vérifiez votre boîte de réception pour l'e-mail de vérification. Si vous ne le trouvez pas dans votre boîte de réception principale, veuillez vérifier votre dossier de courrier indésirable.</p>
+                        <p>Si vous avez besoin d'une nouvelle vérification ou rencontrez des problèmes, veuillez contacter notre équipe d'assistance.</p>
+                        <a href="{{ path('app_contact') }}" class="btn btn-primary">Nous contacter</a>
+                        
+                        <!-- Ajoutez le lien vers la boîte de réception de l'utilisateur -->
+                        <p class="mt-3">
+                            <a href="mailto:{{ user.getEmail() }}">Vérifier votre boîte de réception</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

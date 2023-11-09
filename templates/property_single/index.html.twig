@@ -1,0 +1,10 @@
+{% extends '_layouts/base.html.twig' %}
+
+{% block title %}ProprioPub - Property-single{% endblock %}
+
+{% block body %}
+    <main id="main">
+        {{ include('property_single/_partials/_intro_single.html.twig') }}
+        {{ include('property_single/_partials/_property_single.html.twig') }}
+    </main>
+{% endblock %}

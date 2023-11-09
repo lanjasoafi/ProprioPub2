@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+    <section class="" style="background-image: linear-gradient(#000000ab,#000000ab),url({{asset('assets/img/post-single-1.jpg')}}); height:100vh">
+        <div class="container">
+            <div class="row m-auto justify-content-center align-item-center vh-100">
+                <div class="col-md-3"></div>
+                <div class="col-md-6 border p-5 m-auto">
+                    <h1 class="mb-3 font-weight-normal text-center text-light">Inscription</h1>
+                    <div class="text-danger">
+                        {{ form_errors(registrationForm) }}
+                    </div>
+
+                    {{ form_start(registrationForm) }}
+                        {{ form_row(registrationForm.name) }}
+                        {{ form_row(registrationForm.firstname) }}
+                        {{ form_row(registrationForm.email) }}
+                        {{ form_row(registrationForm.phone) }}
+                        {{ form_row(registrationForm.skype) }}
+                        {{ form_row(registrationForm.plainPassword, {
+                            label: 'Mot de passe'
+                        }) }}
+                        {# does **not** work - the variables are not recursive #}
+
+                        <div class="form-check form-switch">
+                            {{ form_widget(registrationForm.agreeTerms,{
+                                    'label': 'Accepte les termes et les conditions',
+                                    'label_attr': {'class': 'text-light ms-3'}
+                            }) }}
+                        </div>
+                        
+                        
+                        <button type="submit" class="btn btn-success w-100 mt-3">S'inscrire</button>
+                        <button class="btn btn-warning w-100 mt-3 link-light">
+                            <a class="link-light" href="{{path('app_home')}}">Annuler</a>
+                        </button>
+                    {{ form_end(registrationForm) }}
+                    <div class="mt-3">
+                    <span class="text-light">Avoir un compte</span>
+                        <a class="text-primary ms-3" href="{{path('app_login',{'_locale': app.request.locale})}}">Se connecter</a>
+                    </div>
+                    
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

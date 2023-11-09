@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paiement PayPal</title>
+    <!-- Ajoutez ici vos styles CSS personnalisés -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            text-align: center;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            color: #333;
+        }
+        #paypal-button-container {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Paiement PayPal</h1>
+        <p>Montant total : $10.00 USD</p>
+        <div id="paypal-button-container"></div>
+    </div>
+
+    <script src="https://www.paypal.com/sdk/js?client-id=AYJIzNDmTWEjIIFGVGZFKNoJ58iwhBu-MZH5IdSf0Br1k338orUBxyepZm03ayS2C7WuktgtVBOTfJLK"></script>
+    <script>
+    paypal.Buttons({
+        createOrder: function(data, actions) {
+            return actions.order.create({
+                purchase_units: [{
+                    amount: {
+                        value: '10.00'
+                    }
+                }]
+            });
+        },
+        onApprove: function(data, actions) {
+            return actions.order.capture().then(function(details) {
+                // Redirigez vers la page de confirmation
+                window.location.href = '{{ returnUrl }}';
+            });
+        },
+        onCancel: function(data) {
+            // Redirigez vers la page d'annulation
+            window.location.href = '{{ cancelUrl }}';
+        }
+    }).render('#paypal-button-container');
+</script>
+
+</body>
+</html>

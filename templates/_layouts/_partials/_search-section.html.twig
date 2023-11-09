@@ -1,0 +1,73 @@
+<div class="click-closed"></div>
+<!--/ Form Search Star /-->
+<div class="box-collapse">
+    <div class="title-box-d">
+        <h3 class="title-d">Search Property</h3>
+    </div>
+    <span class="close-box-collapse right-boxed bi bi-x"></span>
+    <div class="box-collapse-wrap form">
+        <form class="form-a" id="property-search-form" action="{{ path('app_property') }}" method="GET">
+            <div class="row">
+                <div class="col-md-12 mb-2">
+                    <div class="form-group">
+                        <label class="pb-2" for="keyword">{% trans %}Mot clé{% endtrans %}</label>
+                        <input type="text" name="keyword" class="form-control form-control-lg form-control-a" placeholder="Keyword">
+                    </div>
+                </div>
+                <div class="col-md-6 mb-2">
+                    <div class="form-group mt-3">
+                        <label class="pb-2" for="type">{% trans %}Type d'immobilier{% endtrans %}</label>
+                        <select name="type" class="form-control form-select form-control-a" id="type">
+                            <option value="all">{% trans %}Tous{% endtrans %}</option>
+                            <option value="Maisons Individuelles">{% trans %}Maisons Individuelles{% endtrans %}</option>
+                            <option value="Condominiums et Appartements">{% trans %}Condominiums et Appartements{% endtrans %}</option>
+                            <option value="Propriétés Résidentielles">{% trans %}Propriétés Résidentielles{% endtrans %}</option>
+                            <option value="Maisons de Ville">{% trans %}Maisons de Ville{% endtrans %}</option>
+                            <option value="Logements Sociaux">{% trans %}Logements Sociaux{% endtrans %}</option>
+                            <option value="Logements Étudiants">{% trans %}Logements Étudiants{% endtrans %}</option>
+                            <option value="Logements de Vacances">{% trans %}Logements de Vacances{% endtrans %}</option>
+                            <option value="Co-living">{% trans %}Co-living{% endtrans %}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-2">
+                    <div class="form-group mt-3">
+                        <label class="pb-2" for="adress">{% trans %}Localisation de l'immobilier{% endtrans %}</label>
+                        <input type="text" name="adress" class="form-control form-control-lg form-control-a" >
+                    </div>
+                </div>
+                <div class="col-md-6 mb-2">
+                    <div class="form-group mt-3">
+                        <label class="pb-2" for="surface">{% trans %}Superficier de l'immobilier{% endtrans %}</label>
+                        <input type="number" name="surface" class="form-control form-control-lg form-control-a">
+                    </div>
+                </div>
+                <div class="col-md-6 mb-2">
+                    <div class="form-group mt-3">
+                        <label class="pb-2" for="chambre">{% trans %}Nombre de chambre{% endtrans %}</label>
+                        <input type="number" name="chambre" class="form-control form-control-lg form-control-a">
+                    </div>
+                </div>
+                <div class="col-md-6 mb-2">
+                    <div class="form-group mt-3">
+                        <label class="pb-2" for="status">{% trans %}Status de l'annonce{% endtrans %}</label>
+                        <select name="status" class="form-control form-select form-control-a" id="status">
+                            <option value="all">{% trans %}Tous{% endtrans %}</option>
+                            <option value="A louer">{% trans %}A louer{% endtrans %}</option>
+                            <option value="A vendre">{% trans %}A vendre{% endtrans %}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-2">
+                    <div class="form-group mt-3">
+                        <label class="pb-2" for="price">{% trans %}Prix de l'immobilier{% endtrans %}</label>
+                        <input type="text" name="price" class="form-control form-control-lg form-control-a">
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <button type="submit" class="btn btn-b">Search Property</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

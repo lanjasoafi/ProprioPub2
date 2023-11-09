@@ -1,0 +1,93 @@
+
+    <section class="property-grid grid">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="grid-option">
+              
+            </div>
+          </div>
+          {% if pagination.getTotalItemCount() == 0 %}
+            <div class="row">
+              <div class="col-md-12">
+                  <p>Aucun résultat trouvé.</p>
+              </div>
+            </div>
+          {% elseif pagination|length == 0 %}
+           
+              
+                <p class="text-dark">Aucun résultat trouvé.</p>
+                {# Débogage pour vérifier que cette condition est atteinte #}
+                <p>Condition atteinte.</p>
+             
+            
+          {% else %}
+
+          {% for property in pagination %}
+            <div class="col-md-4">
+              <div class="card-box-a card-shadow">
+                <div class="img-box-a">
+                    {# <img src="{{ asset('uploads/images/'~ property.images[0]) }}" alt="" class="img-a " style="height: 500px;"> #}
+                    {% if property.images|length > 0 %}
+                      <img src="{{ asset('uploads/images/'~ property.images[0]) }}" alt="" class="img-a" style="height: 500px;">
+                    {% else %}
+                      <img src="{{ asset('assets/img/no image .png') }}" alt="Empty Image" class="img-a" style="height: 500px;">
+                    {% endif %}
+                </div>
+                <div class="card-overlay">
+                  <div class="card-overlay-a-content">
+                    <div class="card-header-a">
+                      <h2 class="card-title-a">
+                        <a href="#">{{property.title}}
+                          <br /> {{property.adress}}</a>
+                      </h2>
+                    </div>
+                    <div class="card-body-a">
+                      <div class="price-box d-flex">
+                        <span class="price-a">rent | $ {{property.price}}</span>
+                      </div>
+                      <a href="{{ path('app_property_single', {id: property.id}) }}" class="link-a">{% trans %}Cliquer pour voire{% endtrans %}
+                        <span class="bi bi-chevron-right"></span>
+                      </a>
+                    </div>
+                    <div class="card-footer-a">
+                      <ul class="card-info d-flex justify-content-around">
+                        <li>
+                          <h4 class="card-info-title">{% trans %}surface{% endtrans %}</h4>
+                          <span>{{property.surface}}m
+                            <sup>2</sup>
+                          </span>
+                        </li>
+                        <li>
+                          <h4 class="card-info-title">{% trans %}chambres{% endtrans %}</h4>
+                          <span>{{property.chambre}}</span>
+                        </li>
+                        <li>
+                          <h4 class="card-info-title">{% trans %}salle de bain{% endtrans %}</h4>
+                          <span>{{property.bain}}</span>
+                        </li>
+                        <li>
+                          <h4 class="card-info-title">{% trans %}Garages{% endtrans %}</h4>
+                          <span>{{property.garage}}</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+          {% endif %}
+      
+          
+           <div class="navigation">
+              
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            {{ knp_pagination_render(pagination) }}
+          </div>
+        </div>
+      </div>
+    </section>

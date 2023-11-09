@@ -1,0 +1,147 @@
+
+<div class="foot">
+<section class="section-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-4">
+          <div class="widget-a">
+            <div class="w-header-a">
+              {# <h3 class="w-title-a text-brand">EstateAgency</h3> #}
+              <img src="{{asset('assets/img/ProprioPub.png')}}" class="img-fluid rounded-top" alt="">
+            </div>
+            <div class="w-body-a">
+              <p class="w-text-a color-text-a">
+                {% trans %}Veuillez nous contacter pour toute information, nous sommes à votre disposition.{% endtrans %}
+              </p>
+            </div>
+            <div class="w-footer-a">
+              <ul class="list-unstyled">
+                <li class="color-a text-light">
+                  <span class="color-text-a">Phone .</span> contact@example.com
+                </li>
+                <li class="color-a text-light">
+                  <span class="color-text-a">Email .</span> +261340679725
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-4 section-md-t3">
+          <div class="widget-a">
+            <div class="w-header-a">
+              <h3 class="w-title-a text-brand text-light">Menus</h3>
+            </div>
+            <div class="w-body-a">
+              <div class="w-body-a">
+                <ul class="list-unstyled">
+                  <li class="item-list-a">
+                    <i class="bi bi-chevron-right"></i> <a class="text-light  {% if current_menu is defined and current_menu == 'Home' %}
+              active
+            {% endif %}" href="{{ path('app_home')}}">{% trans %}Accueil{% endtrans %}</a>
+                  </li>
+                  <li class="item-list-a">
+                    <i class="bi bi-chevron-right"></i> <a class="text-light  {% if current_menu is defined and current_menu =='About' %}
+              active
+            {% endif %}" href="{{ path('app_about')}}">{% trans %}À propos{% endtrans %}</a>
+                  </li>
+                  <li class="item-list-a">
+                    <i class="bi bi-chevron-right"></i> <a class="text-light {% if current_menu is defined and current_menu =='Property' %}
+              active
+            {% endif %}" href="{{ path('app_property')}}">{% trans %}Propriété{% endtrans %}</a>
+                  </li>
+                  <li class="item-list-a">
+                    <i class="bi bi-chevron-right"></i> <a class="text-light {% if current_menu is defined and current_menu =='Contact' %}
+              active
+            {% endif %}" href="{{ path('app_contact')}}">{% trans %}Contact{% endtrans %}</a>
+                  </li>
+                  <li class="item-list-a">
+                    <i class="bi bi-chevron-right"></i> <a class="text-light" href="#">Privacy Policy</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-4 section-md-t3">
+          <div class="widget-a">
+            <div class="w-header-a">
+              <h3 class="w-title-a text-brand text-light">{% trans %}Langue du Site{% endtrans %}</h3>
+            </div>
+            <div class="w-body-a">
+              <ul class="navbar-nav ms-auto">
+                  {% if app.request.locale == 'en' %}
+                      <li class="nav-item">
+                          <a class="nav-link" href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'fr'})) }}">
+                              
+                              <img class="drp1" src="{{asset('assets/img/fr.jpg')}}" alt="">
+                          </a>
+                      </li>
+                  {% endif %}
+                  
+                  {% if app.request.locale == 'fr' %}
+                      <li class="nav-item">
+                          <a class="nav-link" href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'en'})) }}">
+                              
+                              <img class="drp1" src="{{asset('assets/img/en.jpg')}}" alt="">
+                          </a>
+                      </li>
+                  {% endif %}
+              </ul>
+                    </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="socials-a">
+            <ul class="list-inline">
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="bi bi-facebook text-light" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="bi bi-twitter text-light" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="bi bi-instagram text-light" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="bi bi-linkedin text-light" aria-hidden="true"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="copyright-footer">
+            <p class="copyright color-text-a">
+              &copy; Copyright
+              <span class="color-a">ProprioPub</span> All Rights Reserved.
+            </p>
+          </div>
+          <div class="credits">
+            <!--
+            All the links in the footer should remain intact.
+            You can delete the links only if you purchased the pro version.
+            Licensing information: https://bootstrapmade.com/license/
+            Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=EstateAgency
+          -->
+            Designed by <a href="#">Lanjasoa Andrianirina</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer><!-- End  Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+</div>
+

@@ -1,0 +1,12 @@
+{% extends '_layouts/base.html.twig' %}
+
+{% block title %}ProprioPub - Propriete{% endblock %}
+
+{% block body %}
+    <main id="main">
+        {{ include('property/_partials/_intro_single.html.twig') }}
+
+        {# Incluez le résultat de la recherche avec pagination dans _property_grid.html.twig #}
+        {{ include('property/_partials/_property_grid.html.twig', {pagination: pagination}) }}
+    </main>
+{% endblock %}

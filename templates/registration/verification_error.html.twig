@@ -1,0 +1,14 @@
+{# templates/registration/verification_error.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Erreur de vérification{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="alert alert-danger mt-5">
+            <h1 class="alert-heading">Erreur de vérification</h1>
+            <p>{{ error }}</p>
+        </div>
+    </div>
+{% endblock %}

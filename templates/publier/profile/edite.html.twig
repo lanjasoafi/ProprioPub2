@@ -1,0 +1,81 @@
+{% extends 'publier/base.html.twig' %}
+{% block title %} Editer Profile{% endblock %}
+
+
+{% block body %}
+
+    <div class="container bootstrap snippets bootdey">
+
+        
+        
+        {{ form_start(form, {'attr': {'enctype': 'multipart/form-data'}}) }}
+        <div class="row">
+        <!-- left column -->
+        
+            <div class="col-md-3">
+                <div class="text-center">
+                {% if user.photo is not null %}
+                <img src="{{ asset('/uploads/photos/' ~ user.photo)}}" class="avatar img-circle img-thumbnail" alt="avatar">
+                {% else %}
+                <img src="{{ asset('assets/img/no image .png') }}" alt="Empty Image" class="avatar img-circle img-thumbnail">
+                {% endif %}
+                <h6>{% trans %}Ajouter votre photo{% endtrans %}</h6>
+                
+                 {{ form_row(form.photo) }}
+                </div>
+            
+            </div>
+        
+            <!-- edit form column -->
+            <div class="col-md-9 personal-info">
+                {# <div class="alert alert-info alert-dismissable">
+                <a class="panel-close close" data-dismiss="alert">×</a> 
+                <i class="fa fa-coffee"></i>
+                This is an <strong>.alert</strong>. Use this to show important messages to the user.
+                </div> #}
+                <h3>{% trans %}Infos Personnel{% endtrans %}</h3>
+                
+            
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">{% trans %}Prenom:{% endtrans %}</label>
+                        <div class="col-lg-8">
+                            {{ form_row(form.firstname) }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">{% trans %}Nom:{% endtrans %}</label>
+                        <div class="col-lg-8">
+                            {{ form_row(form.name) }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">{% trans %}Telephone:{% endtrans %}</label>
+                        <div class="col-lg-8">
+                            {{ form_row(form.phone) }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">Email:</label>
+                        <div class="col-lg-8">
+                            {{ form_row(form.email) }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">Skype:</label>
+                        <div class="col-lg-8">
+                            {{ form_row(form.skype) }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-8">
+                            <input type="submit" value="{% trans %}Enregistrer{% endtrans %}" class="btn btn-warning w-100" name="save">
+                        </div>
+                    </div>
+            
+                
+            </div>
+        </div>
+        {{ form_end(form) }}
+    </div>
+    <hr>
+{% endblock %}

@@ -1,0 +1,6 @@
+# Exemple de configuration de route pour la page d'accueil avec la détection de la langue
+index:
+    path: /{_locale}/
+    controller: App\Controller\HomeController::index
+    requirements:
+        _locale: en|fr

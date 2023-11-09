@@ -1,0 +1,116 @@
+Here is the improved translation without repetitions and removing the "__":
+
+'Veuillez nous contacter pour toute information, nous sommes à votre disposition':
+    '': 'Please contact us for any information; we are at your service.'
+Accueil: 'Home'
+'À propos': 'About'
+Propriété: 'Property'
+Contact: 'Contact'
+'Mot clé': 'Keywords'
+"Type d'immobilier": 'Property Type'
+Tous: 'All'
+'Maisons Individuelles': 'Single Houses'
+'Condominiums et Appartements': 'Condominiums and Apartments'
+'Propriétés Résidentielles': 'Residential Properties'
+'Maisons de Ville': 'Townhouses'
+'Logements Sociaux': 'Social Housing'
+'Logements Étudiants': 'Student Housing'
+'Logements de Vacances': 'Vacation Rentals'
+Co-living: 'Co-living'
+"Localisation de l'immobilier": 'Property Location'
+"Superficier de l'immobilier": 'Property Area'
+'Nombre de chambre': 'Number of Bedrooms'
+"Status de l'annonce": 'Listing Status'
+'A louer': 'For Rent'
+'A vendre': 'For Sale'
+"Prix de l'immobilier": 'Property Price'
+Publier: 'Publish'
+Français: 'French'
+English: 'English'
+'Nos services': 'Our Services'
+Offres: 'Offers'
+"ProprioPub offre une variété d'annonces immobilières, des résidences aux investissements commerciaux":
+    ' Vous y trouverez une gamme complète répondant à vos besoins':
+        '': 'ProprioPub offers a variety of real estate listings, from residences to commercial investments. You will find a comprehensive range that meets your needs.'
+Stratégie: 'Strategy'
+'Découvrez des investissements immobiliers stratégiques, avec une analyse approfondie du marché':
+    ' Nos professionnels vous orientent vers une rentabilité maximale':
+        '': 'Discover strategic real estate investments with in-depth market analysis. Our professionals guide you toward maximum profitability.'
+Locations: 'Rentals'
+'Cherchez des locations saisonnières uniques pour vos voyages':
+    ' Explorez des résidences de vacances de qualité, promettant des séjours inoubliables':
+        '': 'Find unique seasonal rentals for your travels. Explore high-quality vacation residences, promising unforgettable stays.'
+'Voire tout': 'See All'
+surface: 'Area'
+chambres: 'Bedrooms'
+'salle de bain': 'Bathrooms'
+Garages: 'Garages'
+Properties: 'Properties'
+'A PROPOS': 'About Us'
+'DU SITE': 'Our Website'
+'Liberté Immobilière Pour Tous': 'Real Estate Freedom for All'
+Objectif: 'Objective'
+'clé: Votre Réussite':
+    '': 'Key: Your Success.'
+'ProprioPub est spécialement conçue pour répondre aux besoins des particuliers souhaitant publier leurs annonces immobilières avec simplicité, efficacité et succès':
+    ' Grâce à notre interface conviviale et intuitive, vous disposez de tous les outils nécessaires pour maximiser la visibilité de vos biens tout en simplifiant la gestion de vos annonces':
+        ' Notre objectif est de vous offrir une expérience de publication fluide et optimale, vous permettant ainsi de promouvoir vos propriétés sur le marché immobilier de manière professionnelle et réussie': { '': 'ProprioPub is specially designed to meet the needs of individuals wishing to publish their real estate listings with simplicity, efficiency, and success. With our user-friendly and intuitive interface, you have all the necessary tools to maximize the visibility of your properties while simplifying the management of your listings. Our goal is to offer you a smooth and optimal publishing experience, enabling you to promote your properties on the real estate market in a professional and successful manner.' }
+"Qu'il s'agisse de vendre, de louer ou de mettre en avant vos biens immobiliers, notre site est là pour vous accompagner à chaque étape, vous aidant à atteindre vos objectifs en matière d'immobilier":
+    ' Avec notre soutien, vous pouvez mettre en valeur vos biens de manière optimale, toucher un public plus large et maximiser vos opportunités sur le marché immobilier en constante évolution':
+        '': "Whether it's selling, renting, or showcasing your real estate properties, our website is here to assist you at every step, helping you achieve your real estate goals. With our support, you can showcase your properties optimally, reach a wider audience, and maximize your opportunities in the ever-evolving real estate market."
+'Résumé rapide': 'Quick Summary'
+"ID de propriété\_:\_": 'Property ID:'
+'Adresse:': 'Address:'
+"Type d'immobilier:": 'Property Type:'
+'Status:': 'Status:'
+'Superficie:': 'Area:'
+'Nombre de chambre:': 'Number of Bedrooms:'
+'Nombre de salle de bain:': 'Number of Bathrooms:'
+'Garage:': 'Garage:'
+'Description de la propriété': 'Property Description'
+"Contacter l'agent": 'Contact Agent'
+Contactez-nous: 'Contact Us'
+'Pour nous contacter et bénéficier de notre expertise en immobilier, nous vous encourageons à remplir le formulaire ci-dessous':
+    ' Notre équipe dévouée est prête à répondre à toutes vos questions, à vous accompagner dans la réalisation de vos projets immobiliers et à vous offrir un service de qualité inégalée':
+        ' Votre réussite est notre priorité, et nous sommes impatients de vous aider à atteindre vos objectifs immobiliers': { '': 'To contact us and benefit from our real estate expertise, we encourage you to fill out the form below. Our dedicated team is ready to answer all your questions, guide you in realizing your real estate projects, and provide you with unparalleled service quality. Your success is our priority, and we look forward to helping you achieve your real estate goals.' }
+'Properties Grid': 'Properties Grid'
+'Cliquer pour voire': 'Click to View'
+'Nos propriétés étonnantes': 'Our Amazing Properties'
+'Les propriétés': 'Properties'
+'Langue du Site': 'Site Language'
+Fr: Fr
+En: En
+'Dis bonjour': 'Say hello'
+'Retrouvez-nous dans': 'Find us in'
+'Réseaux sociaux': 'Social networks'
+'Votre nom': 'Your Name'
+'Votre adresse email': 'Your Email'
+Sujet: Subject
+Message: Message
+'Envoyer le message': 'Send Message'
+'Toutes les propriétés': 'All Property'
+"Titre de l'immobilier": "Real estate title"
+"Description de l'immobilier": "Description of the real estate"
+"Nombre de salle de bain": "Number of bathrooms"
+"Nombre de garage": "Number of garages"
+'Mon profile': 'My profile'
+'Voire mon profile': 'View my profile'
+'Modifier mon profile': 'Edit my profile'
+Deconnecter: Disconnect
+'Mes Annonces': 'My Listings'
+"Modifier l'Annonce": "Edit the Listing"
+'Mes Annonces Immobilières': 'My Real Estate Listings'
+Precedant: Previous
+Suivant: Next
+Fermer: Close
+"Vous n'avez pas encore publié d'annonces immobilières": "You haven't published any real estate listings yet"
+'Publier une nouvelle annonce': 'Publish a new listing'
+'Ajouter votre photo': 'Add your photo'
+'Infos Personnel': 'Personal Information'
+'Prenom:': 'First Name:'
+'Nom:': 'Last Name:'
+'Telephone:': 'Phone:'
+Enregistrer: Save
+Prenom: First Name
+Nom: Last Name
+Telephone: Phone
