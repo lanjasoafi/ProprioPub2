@@ -13,7 +13,7 @@ Clonez ce dépôt sur votre machine :
 
 bash
 Copy code
-git clone https://github.com/votre_utilisateur/annonces-immobilieres-symfony.git
+git clone https://github.com/lanjasoafi/ProprioPub2.git
 Installez les dépendances du projet à l'aide de Composer :
 
 bash
